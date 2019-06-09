@@ -4,8 +4,7 @@ Localization algorithms: Kalman Filter, Particle Filter
 
 [![Watch the video](https://github.com/mengarena/Robotics/blob/master/Robotics_EstimationLearning/ParticleFilter_Localization_LiDAR/RobotLocalization_1_1.png)](https://youtu.be/fo40xXkGWSk)
 
-![alt text]
-(https://github.com/mengarena/Robotics/blob/master/Robotics_EstimationLearning/ParticleFilter_Localization_LiDAR/RobotLocalization_1.gif)
+![](https://github.com/mengarena/Robotics/blob/master/Robotics_EstimationLearning/ParticleFilter_Localization_LiDAR/RobotLocalization_1.gif)
 
 ![alt text](https://github.com/mengarena/Robotics/blob/master/Robotics_EstimationLearning/ParticleFilter_Localization_LiDAR/RobotLocalization_1_2.png)
 
