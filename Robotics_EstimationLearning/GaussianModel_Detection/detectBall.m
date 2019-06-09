@@ -1,9 +1,8 @@
 % Robotics: Estimation and Learning 
-% WEEK 1
+% Ball detection with Gaussian Model
 % 
 % Complete this function following the instruction. 
 function [segI, loc] = detectBall(I)
-% function [segI, loc] = detectBall(I)
 %
 % INPUT
 % I       120x160x3 numerial array 
