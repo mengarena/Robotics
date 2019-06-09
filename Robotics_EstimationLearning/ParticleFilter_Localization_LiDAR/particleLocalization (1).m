@@ -158,14 +158,16 @@ for j = 2:N   % You will start estimating myPose from j=2 using ranges(:,2).
         curRobotX = ceil(myPose(1,j)*myResol) + myOrigin(1);
         curRobotY = ceil(myPose(2,j)*myResol) + myOrigin(2);
 
-        % Occupied cell from laser hit
         hold on;
+        % Occupied cell from laser hit
         h1 = plot(XX, YY, 'g.');
 
         hold on;
+        % Laser beams
         h2 = plot([repmat(curRobotX, laser_beams,1) XX(1:2:total_beams)]', [repmat(curRobotY, laser_beams, 1) YY(1:2:total_beams)]', 'b-');
 
         hold on;
+        % Robot's current position
         h3 = plot(curRobotX, curRobotY, 'yo');
         
         hold on;
