@@ -48,13 +48,15 @@ Psample = repmat(myPose(:,1), [1, M]);  % 3xM
 
 W = repmat(1.0/M, [1, M]);
 
-%v = VideoWriter('PF_Loc_practice.avi');
-%open(v);
+v = VideoWriter('PF_Loc_testing.avi');
+%v.FrameRate = 30;
+open(v);
 
 fig = figure(1);
 fig.Position = [30, 30, maxX + 50, maxY + 50];
-title("Robotics Localization: Partile Filter");
+
 imagesc(map); colormap('gray'); axis equal; hold on;
+title("Robot Localization: Particle Filter");
 
 for j = 2:N   % You will start estimating myPose from j=2 using ranges(:,2).
 
@@ -127,35 +129,54 @@ for j = 2:N   % You will start estimating myPose from j=2 using ranges(:,2).
           
      % 4) Visualize the pose on the map as needed
      if mod(j, 10) == 0   
-
-        % Delete previous plot to save memory and improve performance 
+        %figure(fig);
+        % Delete previous plot to save memory and improve performance
+        try
+            delete(h2);            
+        end
         try
             delete(h1);            
         end
         try
-            delete(h2);            
+            delete(h3);            
+        end
+        try
+            delete(h4);            
         end
 
         % Occupied cells positions from laser
         XX = (ranges(:,j).*cos(scanAngles + myPose(3,j)) + myPose(1,j))*myResol + myOrigin(1);
         YY = (-ranges(:,j).*sin(scanAngles + myPose(3,j)) + myPose(2,j))*myResol + myOrigin(2);
-
+        
+        total_beams = length(XX);
+        laser_beams = length(XX(1:2:total_beams));
+        
+        % Positions of Robot so far
         robotX = ceil(myPose(1,1:j)*myResol) + myOrigin(1);
         robotY = ceil(myPose(2,1:j)*myResol) + myOrigin(2);
 
-        hold on;
-        % Robot trajectory
-        h1 = plot(robotX, robotY, 'r.-'); 
-                
+        curRobotX = ceil(myPose(1,j)*myResol) + myOrigin(1);
+        curRobotY = ceil(myPose(2,j)*myResol) + myOrigin(2);
+
         % Occupied cell from laser hit
         hold on;
-        h2 = plot(XX, YY, 'g.');
+        h1 = plot(XX, YY, 'g.');
+
+        hold on;
+        h2 = plot([repmat(curRobotX, laser_beams,1) XX(1:2:total_beams)]', [repmat(curRobotY, laser_beams, 1) YY(1:2:total_beams)]', 'b-');
+
+        hold on;
+        h3 = plot(curRobotX, curRobotY, 'yo');
+        
+        hold on;
+        % Robot trajectory
+        h4 = plot(robotX(1:j-1), robotY(1:j-1), 'r.-'); 
                 
         drawnow;
-        
-        %writeVideo(v, getframe(gcf));
+        pause(0.1);
+        writeVideo(v, getframe(gcf));
      end
 
 end
 
-%close(v);
+close(v);

@@ -59,7 +59,7 @@ pose = particleLocalization(ranges, scanAngles, M, param);
 % The final grid map:
 figure(2);
 imagesc(M); hold on;
-title("Robotics Localization: Partile Filter");
+title("Robot Localization: Particle Filter");
 
 %% Plot LIDAR data
 lidar_global(:,1) =  (ranges(:,1).*cos(scanAngles + pose(3,1)) + pose(1,1))*param.resol + param.origin(1);
