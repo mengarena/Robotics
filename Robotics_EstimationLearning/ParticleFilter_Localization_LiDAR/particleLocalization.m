@@ -1,5 +1,5 @@
 % Robotics: Estimation and Learning 
-% WEEK 4
+% Particle Filter: Localization based on LiDAR
 % 
 % Complete this function following the instruction. 
 function myPose = particleLocalization(ranges, scanAngles, map, param)
