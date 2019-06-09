@@ -10,8 +10,6 @@ This is the code/algorithms implemented for the Coursera course: Robotics: Estim
 
 ![alt text](https://github.com/mengarena/Robotics/blob/master/Robotics_EstimationLearning/ParticleFilter_Localization_LiDAR/RobotLocalization_1_5.png)
 
-![alt text](https://github.com/mengarena/Robotics/blob/master/Robotics_EstimationLearning/ParticleFilter_Localization_LiDAR/RobotLocalization_1_6.png)
-
 ![alt text](https://github.com/mengarena/Robotics/blob/master/Robotics_EstimationLearning/ParticleFilter_Localization_LiDAR/RobotLocalization_2_1.png)
 
 ![alt text](https://github.com/mengarena/Robotics/blob/master/Robotics_EstimationLearning/ParticleFilter_Localization_LiDAR/RobotLocalization_2_2.png)
