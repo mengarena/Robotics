@@ -58,7 +58,7 @@ fig.Position = [30, 30, maxX + 50, maxY + 50];
 imagesc(map); colormap('gray'); axis equal; hold on;
 title("Robot Localization: Particle Filter");
 
-for j = 2:N   % You will start estimating myPose from j=2 using ranges(:,2).
+for j = 2:N   % Start estimating myPose from j=2 using ranges(:,2).
 
      fprintf("Progress: %d/%d\n", j, N);
      
